@@ -1,0 +1,11 @@
+[window]
+padding.x = 10
+padding.y = 10
+decorations = "None"
+blur = true
+opacity = 0.9
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+
+
