@@ -1,0 +1,189 @@
+format = """
+[](bg_username)\
+$os\
+$username\
+[](bg:bg_directory fg:bg_username)\
+$directory\
+[](fg:bg_directory bg:bg_git)\
+$git_branch\
+$git_status\
+[](fg:bg_git bg:bg_lang)\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+[](fg:bg_lang bg:bg_docker)\
+$docker_context\
+[](fg:bg_docker bg:bg_time)\
+$time\
+[ ](fg:bg_time)\
+$line_break$character
+"""
+
+palette = 'mr_clean'
+
+[palettes.mr_clean]
+bg_username = "#222831"
+bg_directory = "#4793AF"
+bg_git = "#F0AF54"
+bg_lang = "#DD5746"
+bg_docker = "#33658A"
+bg_time = "#8B322C"
+# Disable the blank line at the start of the prompt
+# add_newline = true
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:bg_username"
+style_root = "bg:bg_username"
+format = '[$user ]($style)'
+disabled = false
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+style = "bg:bg_username"
+disabled = false # Disabled by default
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = " "
+
+[directory]
+home_symbol = " "
+style = "bg:bg_directory"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+[c]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:bg_docker"
+format = '[ $symbol $context ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:bg_git"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:bg_git"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = "󰆥 "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = " "
+style = "bg:bg_lang"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:bg_time"
+format = '[   $time ]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+# success_symbol = '[](bold fg:color_green)'
+# error_symbol = '[](bold fg:color_red)'
+# vimcmd_symbol = '[](bold fg:color_green)'
+# vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+# vimcmd_replace_symbol = '[](bold fg:color_purple)'
+# vimcmd_visual_symbol = '[](bold fg:color_yellow)'
